@@ -99,10 +99,10 @@ execute "set <M-m>=\em"
 " Delete the buffer
 nnoremap <M-m> :bd<CR>
 " Switch tabs; the last command <C-w>l is to move the focus to file window
-execute "set <M-l>=\el"
-nnoremap <M-l> :tabn<CR><C-w>l
-execute "set <M-h>=\eh"
-nnoremap <M-h> :tabp<CR><C-w>l
+execute "set <M-n>=\en"
+nnoremap <M-n> :tabn<CR><C-w>l
+execute "set <M-b>=\eb"
+nnoremap <M-b> :tabp<CR><C-w>l
 execute "set <M-;>=\e;"
 nnoremap <M-;> <C-w><C-w>
 
