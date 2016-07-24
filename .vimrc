@@ -137,23 +137,24 @@ autocmd FileType html,vimrc,scss,css,js autocmd BufWritePre <buffer> :call TrimW
 set mouse=a
 
 " Don't apply indent while paste
-set paste
-
+" When you enable the below the 'vim-javascript' auto identation won't work
+" set paste
+ 
 " Set tab width
 :set tabstop=4
 " Required to do autoindent properly when apply the command gg=G (Auto indend for the whole file)
 :set shiftwidth=4 
-
+ 
 " Ignore case while search
 :set ignorecase
-
+ 
 " Show line number
 :set number
 " No text wrp
 :set nowrap
-
+ 
 " Solarized theme setting
-syntax enable
+" syntax enable
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
