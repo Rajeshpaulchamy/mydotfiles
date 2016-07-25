@@ -41,7 +41,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'joukevandermaas/vim-ember-hbs'
 " git clone https://github.com/jistr/vim-nerdtree-tabs.git ~/.vim/bundle/vim-nerdtree-tabs
 Plugin 'jistr/vim-nerdtree-tabs'
-
+" git clone git://github.com/altercation/vim-colors-solarized.git 
+Plugin 'altercation/vim-colors-solarized'
 
 "---------------------------------------------------------------------------
 " Vundle configruation ends
