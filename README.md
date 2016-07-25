@@ -3,7 +3,7 @@
 i am using ubuntu and this repository stores my important dot files present in my home folder
 
 
-# How to Setup Ubuntu 14.04 
+# Setup guidelines for Ubuntu 14.04 (Node.JS, MongoDB)
 
 ## VBOX-GUEST-ADDITIONS ([link](https://mylinuxramblings.wordpress.com/2014/12/06/how-to-install-virtualbox-guest-editions-in-ubuntu-server-14-04/))
 1. Update your APT database:  `sudo apt-get update`
@@ -37,37 +37,49 @@ sudo apt-get install openssh-server
 ## Install Node.JS ([link](https://codewithintent.com/how-to-install-update-and-remove-node-js-from-linux-or-ubuntu/))
 1. Download the latest `tar.gz` from the link [https://nodejs.org/dist/latest/](https://nodejs.org/dist/latest/)
 2. Execute the below commands 
-```
-tar -xf node-vX.X.X-linux-x64.tar.xz
-sudo mv node-vX.X.X-linux-x64/bin/* /usr/local/bin/
-sudo mv node-vX.X.X-linux-x64/lib/node_modules/ /usr/local/lib/
-```
+	```
+	tar -xf node-vX.X.X-linux-x64.tar.xz
+	sudo mv node-vX.X.X-linux-x64/bin/* /usr/local/bin/
+	sudo mv node-vX.X.X-linux-x64/lib/node_modules/ /usr/local/lib/
+	```
 3. Make sure the version of `node` and `npm` using the below commands
-```
-node -v
-npm -v
-```
+	```
+	node -v
+	npm -v
+	```
 4. To uninstall `node` and `npm` use the below command
-```
-sudo rm /usr/local/bin/{node,npm}
-````
+	```
+	sudo rm /usr/local/bin/{node,npm}
+	````
 
 ### Configure NPM global package location ([link](https://www.sitepoint.com/beginners-guide-node-package-manager/))
 1. Create a directory to store the npm global modules
-```
-mkdir /home/rajesh/myworks/node_modules_global
-```
-
+	```
+	mkdir /home/rajesh/myworks/node_modules_global
+	```
 2. Check the global package location
+	```
+	npm config get prefix
+	```
+3. Still we are using the `npm` owned by root, to change it to the new global package location, install `npm` again
+	```
+	npm install npm --global
+	```
+4. Finally, we need to add `$HOME/myworks/node_modules_global/bin` to our `$PATH` environment variable (** Note: Use .bashrc it has this line already **)
+	```
+	export PATH="$HOME/myworks/node_modules_global/bin:$PATH"
+	```
+
+## Install MongoDB ([link](https://codewithintent.com/how-to-install-update-and-remove-node-js-from-linux-or-ubuntu/))
+
 ```
-npm config get prefix
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+```
+After that, check the running status by executing the below command
+```
+sudo service mongod start
 ```
 
-3. Still we are using the `npm` owned by root, to change it to the new global package location, install `npm` again
-```
-npm install npm --global
-```
-4. Finally, we need to add `$HOME/myworks/node_modules_global/bin` to our `$PATH` environment variable (** Note: Use .bashrc it has this line already **)
-```
-export PATH="$HOME/myworks/node_modules_global/bin:$PATH"
-```
