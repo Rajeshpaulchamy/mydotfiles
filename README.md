@@ -70,7 +70,7 @@ npm install npm --global
 export PATH="$HOME/myworks/node_modules_global/bin:$PATH"
 ```
 
-## Install MongoDB ([link](https://codewithintent.com/how-to-install-update-and-remove-node-js-from-linux-or-ubuntu/))
+## Install MongoDB ([link](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/))
 
 ```
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
