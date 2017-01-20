@@ -33,6 +33,15 @@ git config --global user.email "XXXX@gmail.com"
 ```
 sudo apt-get install openssh-server
 ```
+## Enable VIM
+* To install all VIM plugins first you need to install `Vundle` package
+* Execute the below command to install `Vundle` package
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+* Next you need to install the `Vim` packages
+* Launch `vim` and run `:PluginInstall`
 
 ## Install Node.JS ([link](https://codewithintent.com/how-to-install-update-and-remove-node-js-from-linux-or-ubuntu/))
 * Download the latest `tar.gz` from the link [https://nodejs.org/dist/latest/](https://nodejs.org/dist/latest/)
