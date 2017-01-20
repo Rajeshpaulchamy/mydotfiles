@@ -159,3 +159,46 @@ gulp.task("transpile", function(){
 ```
 npm run gulp
 ```
+
+### Install `PM` node process manager
+```
+sudo npm install -g pm2
+```
+
+### Install and Configure `Nginx`
+```
+sudo apt-get install nginx
+```
+* Now open the default server block configuration file for editing:
+```
+sudo vim /etc/nginx/sites-available/default
+```
+* Delete everything in the file and insert the following configuration. Be sure to substitute your own domain name for the `server_name` directive. Additionally, change the port `8080` if your application is set to listen on a different port:
+```
+server {
+    listen 80;
+
+    server_name example.com;
+
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+* Make sure you didn't introduce any syntax errors by typing:
+```
+sudo nginx -t
+```
+* Next, restart Nginx:
+```
+sudo systemctl restart nginx
+```
+* Next, permit traffic to Nginx through the firewall, if you have it enabled:
+```
+sudo ufw allow 'Nginx Full'
+```
