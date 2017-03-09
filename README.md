@@ -202,3 +202,31 @@ sudo systemctl restart nginx
 ```
 sudo ufw allow 'Nginx Full'
 ```
+
+### DOCKER 
+
+```
+$ sudo apt-get install apt-transport-https ca-certificates
+$ curl -fsSL https://yum.dockerproject.org/gpg | sudo apt-key add -
+$ apt-key fingerprint 58118E89F3A912897C070ADBF76221572C52609D
+```
+
+Now create a new apt configuration file /etc/apt/sources.list.d/docker.list and one of below docker
+
+For Ubuntu Xenial 16.04 (LTS)
+```
+deb https://apt.dockerproject.org/repo ubuntu-xenial main
+```
+For Ubuntu Wily 15.10
+```
+deb https://apt.dockerproject.org/repo ubuntu-wily main
+```
+For Ubuntu Trusty 14.04 (LTS)
+```
+deb https://apt.dockerproject.org/repo ubuntu-trusty main
+```
+Start install DOCKER
+```
+$ sudo apt-get update
+$ sudo apt-get install docker-engine
+```
