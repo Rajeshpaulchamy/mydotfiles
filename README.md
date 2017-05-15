@@ -244,6 +244,6 @@ $ sudo apt-get install docker-engine
 cd ~/.ssh/
 ssh-keygen -e -f assetinsight_private > assetinsight_pub.pub
 ssh-keygen -i -f assetinsight_pub.pub > assetinsight.pub
-ssh-keygenssh -i assetinsight_private root@xxx.xxx.xxx.xxx -p xxxx
+ssh -i assetinsight_private root@xxx.xxx.xxx.xxx -p xxxx
 Enter passphrase for key 'assetinsight_private': < ENTER PASSWORD  >
 ```
