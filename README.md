@@ -232,7 +232,7 @@ $ sudo apt-get install docker-engine
 ```
 
 
-### Connect to VPS server from Ubuntu
+# Connect to VPS server from Ubuntu
 1. Open PuttyGen (Open in Windows PC)
 2. Click Load
 3. Load your private key (if it is encrypted private key then it will ask for the password)
@@ -247,3 +247,5 @@ ssh-keygen -i -f assetinsight_pub.pub > assetinsight.pub
 ssh -i assetinsight_private root@xxx.xxx.xxx.xxx -p xxxx
 Enter passphrase for key 'assetinsight_private': < ENTER PASSWORD  >
 ```
+### Connect to VPS server using FTP
+[Refer this link](https://www.digitalocean.com/community/tutorials/how-to-use-filezilla-to-transfer-and-manage-files-securely-on-your-vps)
